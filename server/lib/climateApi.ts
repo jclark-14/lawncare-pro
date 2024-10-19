@@ -195,13 +195,19 @@ export async function fetchClimateDataFromAPI(
 
   try {
     const response = await fetch(url, options);
+
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorText = await response.text();
+      console.error('API Error Response:', errorText);
+      throw new Error(
+        `HTTP error! status: ${response.status}, message: ${errorText}`
+      );
     }
+
     const apiData: ApiClimateData = await response.json();
     return parseClimateData(apiData);
   } catch (error) {
-    console.error('Error fetching climate data:', error);
+    console.error('Detailed error in fetchClimateDataFromAPI:', error);
     throw new Error('Failed to fetch climate data');
   }
 }

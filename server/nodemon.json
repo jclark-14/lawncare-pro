@@ -1,0 +1,11 @@
+{
+  "watch": ["."],
+  "ext": "ts,json",
+  "ignore": ["*.test.ts"],
+  "exec": "tsx server.ts",
+  "events": {
+    "restart": "kill-port 8080",
+    "crash": "kill-port 8080"
+  },
+  "delay": "1500"
+}

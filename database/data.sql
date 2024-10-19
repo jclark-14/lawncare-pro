@@ -119,21 +119,22 @@ INSERT INTO "PlanStepTemplates" (
   "intervalToNextStep"
 )
 VALUES
-  (1, 'new_lawn', 'new_lawn', 'sod', 1, 'Test soil pH and nutrient levels', '7 days', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 2, 'Adjust soil pH to 6.2-6.8 if necessary', '14 days', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 3, 'Remove debris and old grass', '3 days', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 4, 'Till the soil to a depth of 4-6 inches', '2 days', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 5, 'Level the area and create a slight slope for drainage', '2 days', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 6, 'Apply starter fertilizer', '1 day', '28 days'),
-  (1, 'new_lawn', 'new_lawn', 'sod', 7, 'Lay Kentucky Bluegrass sod', '1 day', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 8, 'Roll sod for good soil contact', '1 day', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 9, 'Water deeply immediately after laying sod', '1 day', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 10, 'Keep sod consistently moist for 2-3 weeks', '21 days', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 11, 'Reduce watering frequency but increase depth', '14 days', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 12, 'Mow when grass reaches 2-3 inches height', '14 days', NULL),
-  (1, 'new_lawn', 'new_lawn', 'sod', 13, 'Apply nitrogen-rich fertilizer 3-4 weeks after installation', '1 day', '28 days'),
-  (1, 'new_lawn', 'new_lawn', 'sod', 14, 'Apply pre-emergent herbicide if needed', '1 day', '28 days'),
-  (1, 'new_lawn', 'new_lawn', 'sod', 15, 'Apply post-emergent herbicide if needed', '1 day', '28 days');
+  (1, 'new_lawn', 'sod', 1, 'Test soil pH and nutrient levels', '7 days', NULL),
+  (1, 'new_lawn', 'sod', 2, 'Adjust soil pH to 6.2-6.8 if necessary', '14 days', NULL),
+  (1, 'new_lawn', 'sod', 3, 'Remove debris and old grass', '3 days', NULL),
+  (1, 'new_lawn', 'sod', 4, 'Till the soil to a depth of 4-6 inches', '2 days', NULL),
+  (1, 'new_lawn', 'sod', 5, 'Level the area and create a slight slope for drainage', '2 days', NULL),
+  (1, 'new_lawn', 'sod', 6, 'Apply starter fertilizer', '1 day', '28 days'),
+  (1, 'new_lawn', 'sod', 7, 'Lay Kentucky Bluegrass sod', '1 day', NULL),
+  (1, 'new_lawn', 'sod', 8, 'Roll sod for good soil contact', '1 day', NULL),
+  (1, 'new_lawn', 'sod', 9, 'Water deeply immediately after laying sod', '1 day', NULL),
+  (1, 'new_lawn', 'sod', 10, 'Keep sod consistently moist for 2-3 weeks', '21 days', NULL),
+  (1, 'new_lawn', 'sod', 11, 'Reduce watering frequency but increase depth', '14 days', NULL),
+  (1, 'new_lawn', 'sod', 12, 'Mow when grass reaches 2-3 inches height', '14 days', NULL),
+  (1, 'new_lawn', 'sod', 13, 'Apply nitrogen-rich fertilizer 3-4 weeks after installation', '1 day', '28 days'),
+  (1, 'new_lawn', 'sod', 14, 'Apply pre-emergent herbicide if needed', '1 day', '28 days'),
+  (1, 'new_lawn', 'sod', 15, 'Apply post-emergent herbicide if needed', '1 day', '28 days');
+
 
 -- Lawn Improvement Plan
 INSERT INTO "PlanStepTemplates" (

@@ -251,10 +251,27 @@ app.get('*', (req, res) => res.sendFile(`${reactStaticDir}/index.html`));
 app.use(errorMiddleware);
 
 // Start the server
-const port = process.env.PORT;
-app.listen(port, () => {
-  console.log('Listening on port', port);
+// Start the server with graceful shutdown handling
+const PORT = process.env.PORT || 8080;
+const server = app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
+process.on('SIGTERM', () => {
+  console.log('SIGTERM signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+  });
+});
+
+process.on('SIGINT', () => {
+  console.log('SIGINT signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+  });
+});
+
+export default server;
 
 /**
  * Validate user input for registration and login
