@@ -1,84 +1,101 @@
 # LawnCare Pro
 
-A full-stack web application designed for homeowners who want to create and maintain a vibrant lawn. LawnCare Pro generates personalized lawn care plans based on the user's specific climate and lawn needs.
+**Full-stack lawn planning application built with React, TypeScript, Node.js, Express, PostgreSQL, and AWS.**
 
-## Why I Built This
+LawnCare Pro helps homeowners turn location and lawn characteristics into practical, personalized lawn-care plans. The application combines ZIP-code climate data, grass recommendations, persistent user plans, and step-by-step scheduling in a complete full-stack workflow.
 
-I built LawnCare Pro to address a common problem for homeowners: managing lawn care effectively based on their local climate. This project combines my passion for front-end development with my interest in creating a user-friendly tool that helps people achieve better lawn results.
+## What It Demonstrates
 
-## Live Demo
+- End-to-end full-stack application design
+- REST API development with Node.js and Express
+- Relational data modeling with PostgreSQL
+- JWT-based authentication and protected user workflows
+- Argon2 password hashing
+- External API integration for ZIP-code climate data
+- Dynamic plan generation and sequential task scheduling
+- Responsive React + TypeScript frontend development
+- Cloud deployment to AWS EC2
 
-Check out the live demo at the deployed site: [LawnCare Pro](http://ec2-18-215-127-121.compute-1.amazonaws.com/)
+## Core Features
 
-## Technologies Used
+- **Personalized recommendations** based on ZIP-code climate data and lawn characteristics
+- **Grass-species selection** tailored to local growing conditions
+- **Step-by-step lawn plans** generated from reusable plan templates
+- **Persistent user accounts and plans** stored in PostgreSQL
+- **Progress tracking** for individual plan steps
+- **Protected workflows** using JWT authentication
+- **Responsive interface** built with React, TypeScript, and Tailwind CSS
 
-- **Frontend**: React.js, TypeScript, TailwindCSS
-- **Backend**: Node.js, Express.js
-- **Database**: PostgreSQL
-- **APIs**: [Climate by ZIP](https://rapidapi.com/aptitudeapps/api/climate-by-zip)
-- **Authentication**: JWT, Argon2
+## Architecture
 
-## Features
+### Frontend
+- React
+- TypeScript
+- Tailwind CSS
 
-- User authentication for creating and saving lawn care plans.
-- Zipcode-based climate data retrieval to recommend grass species ideal for the user's location.
-- Personalized lawn care plans with step-by-step guides.
-- Tracking progress with the ability to mark steps as completed.
+### Backend
+- Node.js
+- Express
+- REST APIs
+- JWT authentication
+- Argon2 password hashing
+
+### Data
+- PostgreSQL
+- Relational plan, user, and step data
+- Transactional creation of generated plans and scheduled plan steps
+
+### External Services / Deployment
+- Climate by ZIP API
+- AWS EC2
+
+## Application Flow
+
+1. A user creates an account or signs in.
+2. The application retrieves climate data for the user's ZIP code.
+3. Lawn characteristics and climate information are used to recommend appropriate grass species.
+4. The user selects a plan type.
+5. The backend generates an individualized plan from reusable templates.
+6. Plan steps are persisted and scheduled sequentially.
+7. The user can return to the application and track progress over time.
 
 ## Preview
 
 ![LawnCare Pro Preview](assets/gif7.gif)
 
-## Stretch Features
+## Running Locally
 
-1. Integration with IoT devices for real-time lawn condition monitoring.
-2. A community forum where users can share lawn care tips and achievements.
-3. Implementing machine learning to provide smarter lawn care recommendations.
-4. Notifications to remind users of upcoming tasks in their lawn care plan.
+### Requirements
 
-## Development
+- Node.js 18.18+
+- npm 10+
+- PostgreSQL 14+
 
-### System Requirements
+### Setup
 
-- Node.js 18.18 or higher
-- NPM 10 or higher
-- PostgreSQL 14 or higher
+```bash
+git clone https://github.com/jclark-14/lawncare-pro.git
+cd lawncare-pro
+npm install
+```
 
-### Getting Started
+Create a `.env` file in the server directory:
 
-1. Clone the repository.
+```env
+TOKEN_SECRET=<your_jwt_secret>
+DATABASE_URL=<your_database_url>
+```
 
-    ```shell
-    git clone https://github.com/yourusername/lawn-app
-    cd client
-    ```
+Create/import the PostgreSQL database and start the development environment:
 
-2. Install all dependencies with NPM.
+```bash
+createdb lawncarepro
+npm run db:import
+npm run dev
+```
 
-    ```shell
-    npm install
-    ```
+The development client is available at `http://localhost:5173`.
 
-3. Set up environment variables:
+## Project Context
 
-    Create a `.env` file in the `server` directory with the following content:
-
-    ```
-    TOKEN_SECRET=<your_jwt_secret>
-    DATABASE_URL=<your_database_url>
-    ```
-
-4. Import the database schema to PostgreSQL.
-
-    ```shell
-    createdb lawncarepro
-    npm run db:import
-    ```
-
-5. Start the development server for the frontend and backend.
-
-    ```shell
-    npm run dev
-    ```
-
-6. Access the application by navigating to `http://localhost:5173` in your browser.
+LawnCare Pro was built as an independent full-stack project to explore how domain knowledge, external data, user-specific inputs, and reusable application logic can be combined into a practical decision-support tool. The emphasis was on building the complete system—from interface and API design through persistence, authentication, plan-generation logic, and deployment—rather than a standalone frontend demo.
